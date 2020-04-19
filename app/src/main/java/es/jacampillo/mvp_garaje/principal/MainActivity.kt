@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import es.jacampillo.mvp_garaje.Injection
 import es.jacampillo.mvp_garaje.R
-import es.jacampillo.mvp_garaje.data.Post
+import es.jacampillo.mvp_garaje.data.Jornada
 import es.jacampillo.mvp_garaje.utils.toListaDeStrings
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity(), Contrato.View {
         presenter = MainActivityPresenter(Injection.provideRespositorio(), this)
     }
 
-    override fun show(posts: List<Post>) {
-        textview.text = posts.toListaDeStrings()
+    override fun show(jornadas: List<Jornada>) {
+        textview.text = jornadas.toListaDeStrings()
     }
 
     override fun onResume() {

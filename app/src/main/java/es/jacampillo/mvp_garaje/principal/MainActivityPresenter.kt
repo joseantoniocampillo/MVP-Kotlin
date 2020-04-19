@@ -1,6 +1,6 @@
 package es.jacampillo.mvp_garaje.principal
 
-import es.jacampillo.mvp_garaje.data.Post
+import es.jacampillo.mvp_garaje.data.Jornada
 import es.jacampillo.mvp_garaje.data.Repositorio
 
 class MainActivityPresenter(
@@ -8,15 +8,15 @@ class MainActivityPresenter(
     private val vista: Contrato.View
 ) : Contrato.Presenter {
 
-    lateinit var listPost: List<Post>
+    lateinit var listJornadas: List<Jornada>
 
     init {
         vista.presenter = this
     }
 
     override fun loadPosts() {
-        listPost = repositorio.damePosts()
-        vista.show(listPost)
+        listJornadas = repositorio.dameListaJornadas()
+        vista.show(listJornadas)
     }
 
     override fun start() {

@@ -1,13 +1,28 @@
 package es.jacampillo.mvp_garaje.data
 
+import java.util.*
+
 class Repositorio {
-    fun damePosts(): List<Post> {
+    fun dameListaJornadas(): List<Jornada> {
         return listOf(
-            Post("juanito", "todo esta genial"),
-            Post("menganito", "todo esta genial"),
-            Post("felipe ferreras", "todo esta genial"),
-            Post("andrés", "todo esta genial"),
-            Post("pablo", "todo esta genial")
+            Jornada(
+                Dieta.Desayuno(Territorio.EXTRANJERO),
+                Dieta.Comida(Territorio.NACIONAL),
+                Dieta.Cena(Territorio.EXENTO),
+                Date()
+            ),
+            Jornada(
+                Dieta.Desayuno(Territorio.NACIONAL),
+                Dieta.Comida(Territorio.NACIONAL),
+                Dieta.Cena(Territorio.EXENTO),
+                Date()
+            ),
+            Jornada(
+                Dieta.Desayuno(Territorio.EXENTO),
+                Dieta.Comida(Territorio.NACIONAL),
+                Dieta.Cena(Territorio.EXENTO),
+                Date()
+            )
         )
     }
 }

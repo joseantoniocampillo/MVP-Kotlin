@@ -1,11 +1,11 @@
 package es.jacampillo.mvp_garaje.utils
 
-import es.jacampillo.mvp_garaje.data.Post
+import es.jacampillo.mvp_garaje.data.Jornada
 
-fun List<Post>.toListaDeStrings(): String {
+fun List<Jornada>.toListaDeStrings(): String {
     var cadena = ""
     this.forEach {
-        cadena += "${it.autor} \n"
+        cadena += "desayuno: ${it.desayuno.territorio}, valor: ${it.desayuno.valor},\n"
     }
     return cadena
 }

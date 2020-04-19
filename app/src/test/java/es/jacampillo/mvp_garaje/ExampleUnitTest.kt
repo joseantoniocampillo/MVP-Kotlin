@@ -1,5 +1,6 @@
 package es.jacampillo.mvp_garaje
 
+import org.hamcrest.core.Is.`is`
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -14,4 +15,14 @@ class ExampleUnitTest {
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
     }
+
+    @Test
+    fun elrepositorioContieneLaLista() {
+        val repo = Injection.provideRespositorio()
+        val lista = repo.dameListaJornadas()
+        val cantidad = lista.size
+        assertThat(5, `is` (cantidad))
+    }
+
+
 }
