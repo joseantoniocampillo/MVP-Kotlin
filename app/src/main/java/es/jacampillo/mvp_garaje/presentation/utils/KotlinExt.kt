@@ -1,6 +1,6 @@
-package es.jacampillo.mvp_garaje.utils
+package es.jacampillo.mvp_garaje.presentation.utils
 
-import es.jacampillo.mvp_garaje.data.Post
+import es.jacampillo.mvp_garaje.domain.Post
 
 fun List<Post>.toListaDeStrings(): String {
     var cadena = ""

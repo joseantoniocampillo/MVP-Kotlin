@@ -1,3 +1,3 @@
-package es.jacampillo.mvp_garaje.data
+package es.jacampillo.mvp_garaje.domain
 
 data class Post(var autor: String, var contenido: String)

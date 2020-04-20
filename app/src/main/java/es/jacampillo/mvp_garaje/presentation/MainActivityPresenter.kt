@@ -1,10 +1,11 @@
-package es.jacampillo.mvp_garaje.principal
+package es.jacampillo.mvp_garaje.presentation
 
-import es.jacampillo.mvp_garaje.data.Post
-import es.jacampillo.mvp_garaje.data.Repositorio
+import es.jacampillo.mvp_garaje.domain.Post
+import es.jacampillo.mvp_garaje.data.source.local.LocalSourcePosts
+import es.jacampillo.mvp_garaje.domain.Contrato
 
 class MainActivityPresenter(
-    private val repositorio: Repositorio,
+    private val localSourcePosts: LocalSourcePosts,
     private val vista: Contrato.View
 ) : Contrato.Presenter {
 
@@ -15,7 +16,7 @@ class MainActivityPresenter(
     }
 
     override fun loadPosts() {
-        listPost = repositorio.damePosts()
+        listPost = localSourcePosts.damePosts()
         vista.show(listPost)
     }
 

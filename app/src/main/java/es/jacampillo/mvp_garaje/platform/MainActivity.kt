@@ -1,14 +1,17 @@
-package es.jacampillo.mvp_garaje.principal
+package es.jacampillo.mvp_garaje.platform
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import es.jacampillo.mvp_garaje.Injection
+import es.jacampillo.mvp_garaje.platform.di.Injection
 import es.jacampillo.mvp_garaje.R
-import es.jacampillo.mvp_garaje.data.Post
-import es.jacampillo.mvp_garaje.utils.toListaDeStrings
+import es.jacampillo.mvp_garaje.domain.Post
+import es.jacampillo.mvp_garaje.presentation.MainActivityPresenter
+import es.jacampillo.mvp_garaje.presentation.utils.toListaDeStrings
+import es.jacampillo.mvp_garaje.domain.Contrato
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), Contrato.View {
+class MainActivity : AppCompatActivity(),
+    Contrato.View {
 
     // Vamos a requerir una instancia de la interface que implementa nuestro presenter     1º
     override lateinit var presenter: Contrato.Presenter
@@ -18,7 +21,10 @@ class MainActivity : AppCompatActivity(), Contrato.View {
         setContentView(R.layout.activity_main)
 
         // La inicializamos con una clase que implementa esta interface                    2º
-        presenter = MainActivityPresenter(Injection.provideRespositorio(), this)
+        presenter = MainActivityPresenter(
+            Injection.provideRespositorio(),
+            this
+        )
     }
 
     override fun show(posts: List<Post>) {
