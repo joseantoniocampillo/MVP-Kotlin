@@ -5,6 +5,6 @@ interface Handler<T> {
 
     fun handle(result: T)
 
-    fun error(exception: Exception)
+    fun error(exception: String)
 
 }

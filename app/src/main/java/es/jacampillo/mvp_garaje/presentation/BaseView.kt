@@ -1,7 +1,6 @@
 package es.jacampillo.mvp_garaje.presentation
 
-interface BaseView<T> {
+interface BaseView {
 
-    var presenter: T
-
+    fun showErrorMessage(message: String)
 }
